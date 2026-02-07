@@ -3,12 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Escalas 2026</title>
+    <title>Escalas 2026 | BTN 1</title>
     
-    <!-- Favicon -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⛪</text></svg>">
+    <link rel="icon" type="image/svg+xml" href="img/adventist.svg">
 
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -18,139 +16,195 @@
                     colors: {
                         navy: '#0f172a',
                         gold: '#b45309',
+                    },
+                    fontFamily: {
+                        sans: ['Roboto', 'sans-serif'],
+                        heading: ['Montserrat', 'sans-serif'],
                     }
                 }
             }
         }
     </script>
     
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Fonte Google: Roboto & Montserrat -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 
     <style>
         /* =========================================
-           SISTEMA DE TEMAS (100% Variáveis)
+           SISTEMA DE TEMAS & PERFORMANCE
            ========================================= */
         :root {
-            /* --- PALETA BASE (CLARO) --- */
-            --bg-body: #EEEEEE;        /* Slate 100 */
-            --bg-card: #EEEEEE;        /* White */
-            --bg-header: #ffffff;      /* White */
-            --bg-input: #f8fafc;       /* Slate 50 */
-            --bg-hover: #f8fafc;       /* Slate 100 */
-            
-            --text-main: #292929;      /* Slate 700 */
-            --text-heading: #292929;   /* Slate 900 */
-            --text-muted: #292929;     /* Slate 500 */
-            --text-inverse: #ffffff;   /* White */
-            
-            --border-color: #d5d5d5;   /* Slate 200 */
-            --shadow-color: transparent;
-            
-            /* --- MARCA & LOGO (CLARO) --- */
-            --brand-primary: #333537;  /* Navy (Azul Escuro) */
-            --brand-secondary: #b59c2a;/* Gold (Dourado) */
-            
-            --logo-bg: #30343F;        /* Fundo do ícone da logo */
-            --logo-icon: #ffffff;      /* Cor do ícone da logo */
-            --logo-title: #30343F;     /* Cor do título "IASD..." */
-            --logo-subtitle: #30343F;  /* Cor do subtítulo "Escalas..." */
-            
-            /* --- ELEMENTOS ESPECÍFICOS (CLARO) --- */
-            --badge-bg: #EEEEEE;
-            --badge-text: #292929;
-            --badge-border: #e6e6e6;
-            
-            --nav-tab-active: #a98c0d;
-            --nav-tab-hover: rgb(48, 52, 63, 0.05);
-            
-            --card-border-sabado: #a98c0d;
-            --card-border-domingo: #0e66af;
-            --card-border-padrao: #e3e8ec;
-            
-            /* Destaque Tabela */
-            --highlight-sabado-text: #a98c0d;
-            --highlight-domingo-text: #0e66af;
-            --highlight-sabado-bg: rgb(169, 140, 13, 0.1); /* Gold com transparência */
-            --highlight-domingo-bg: rgb(14, 102, 175, 0.1); /* Navy com transparência */
-            
-            /* Dashboard Card */
-            --dash-bg: #ffffff;
-            --dash-border: #b59c2a;
-        }
+            /* Variáveis de Cor (Light Mode) */
+            --bg-gradient: radial-gradient(at 0% 0%, rgba(181, 156, 42, 0.18) 0px, transparent 55%), 
+                           radial-gradient(at 100% 0%, rgba(14, 102, 175, 0.18) 0px, transparent 55%), 
+                           radial-gradient(at 100% 100%, rgba(181, 156, 42, 0.12) 0px, transparent 55%), 
+                           radial-gradient(at 0% 100%, rgba(14, 102, 175, 0.12) 0px, transparent 55%),
+                           #f9fafb;
 
-        /* --- PALETA BASE (ESCURO) --- */
-        html.dark {
-            --bg-body: #131314;
-            --bg-card: #131314;
-            --bg-header: #1d1d1f;
-            --bg-input: #30343F;
-            --bg-hover: #1d1e1f;
+            /* Cores de Vidro & Cards */
+            --glass-header-bg: rgba(255, 255, 255, 0.90);
+            --glass-card-bg: rgba(255, 255, 255, 0.75);
+            --glass-border: rgba(255, 255, 255, 0.6);
+            --glass-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
             
-            --text-main: #e3e3e3;
-            --text-heading: #e3e3e3;
-            --text-muted: #e3e3e3;
-            --text-inverse: #131314;
+            --text-main: #374151;      
+            --text-heading: #111827;   
+            --text-muted: #6B7280;     
             
-            --border-color: #333537;
-            --shadow-color: rgb(19, 19, 20, 0.5);
-            
-            /* --- MARCA & LOGO (ESCURO) --- */
             --brand-primary: #333537;
-            --brand-secondary: #b59c2a;
+            --brand-secondary: #b59c2a; 
             
             --logo-bg: #30343F;
-            --logo-icon: #e3e3e3;
-            --logo-title: #e3e3e3;
-            --logo-subtitle: #e3e3e3;
+            --logo-icon: #ffffff;
+            --logo-title: #30343F;
+            --logo-subtitle: #30343F;
             
-            /* --- ELEMENTOS ESPECÍFICOS (ESCURO) --- */
-            --badge-bg: #333537;
-            --badge-text: #e3e3e3;
-            --badge-border: #303030;
+            --badge-bg: rgba(243, 244, 246, 0.9);
+            --badge-text: #1F2937;
+            --badge-border: rgba(229, 231, 235, 0.6);
             
             --nav-tab-active: #b59c2a;
-            --nav-tab-hover: rgb(19, 19, 20, 0.5);
+            --nav-tab-hover: rgba(181, 156, 42, 0.1);
             
             --card-border-sabado: #b59c2a;
-            --card-border-domingo: #3F88C5;
-            --card-border-padrao: #333537;
+            --card-border-domingo: #0e66af;
+            --card-border-padrao: rgba(229, 231, 235, 0.6);
             
-            /* Destaque Tabela */
             --highlight-sabado-text: #b59c2a;
-            --highlight-domingo-text: #3F88C5;
-            --highlight-sabado-bg: rgb(181, 156, 42, 0.15);
-            --highlight-domingo-bg: rgb(63, 136, 197, 0.15);
+            --highlight-domingo-text: #0e66af;
             
-            /* Dashboard Card */
-            --dash-bg: #1d1d1f;
+            --highlight-sabado-bg: rgba(181, 156, 42, 0.08);
+            --highlight-domingo-bg: rgba(14, 102, 175, 0.08);
+            
             --dash-border: #b59c2a;
         }
 
+        html.dark {
+            /* Variáveis de Cor (Dark Mode) */
+            --bg-gradient: radial-gradient(at 0% 0%, rgba(212, 175, 55, 0.15) 0px, transparent 55%), 
+                           radial-gradient(at 100% 0%, rgba(59, 130, 246, 0.15) 0px, transparent 55%), 
+                           radial-gradient(at 100% 100%, rgba(212, 175, 55, 0.05) 0px, transparent 55%), 
+                           radial-gradient(at 0% 100%, rgba(59, 130, 246, 0.05) 0px, transparent 55%),
+                           #0f1115;
+
+            --glass-header-bg: rgba(20, 22, 27, 0.90);
+            --glass-card-bg: rgba(30, 33, 40, 0.80);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --glass-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+            
+            --text-main: #E5E7EB;
+            --text-heading: #F9FAFB;
+            --text-muted: #9CA3AF;
+            
+            --brand-primary: #E5E7EB;
+            --brand-secondary: #D4AF37; 
+            
+            --logo-bg: #2E333D;
+            --logo-icon: #E5E7EB;
+            --logo-title: #E5E7EB;
+            --logo-subtitle: #9CA3AF;
+            
+            --badge-bg: rgba(45, 48, 58, 0.9);
+            --badge-text: #E5E7EB;
+            --badge-border: rgba(255, 255, 255, 0.1);
+            
+            --nav-tab-active: #D4AF37;
+            --nav-tab-hover: rgba(212, 175, 55, 0.15);
+            
+            --card-border-sabado: #D4AF37;
+            --card-border-domingo: #3B82F6;
+            --card-border-padrao: rgba(255, 255, 255, 0.08);
+            
+            --highlight-sabado-text: #D4AF37;
+            --highlight-domingo-text: #60A5FA;
+            
+            --highlight-sabado-bg: rgba(212, 175, 55, 0.15);
+            --highlight-domingo-bg: rgba(59, 130, 246, 0.15);
+            
+            --dash-border: #D4AF37;
+        }
+
+        /* --- CORREÇÃO DE SCROLL (BACKGROUND FIXO) --- */
         body {
             font-family: 'Roboto', sans-serif;
-            background-color: var(--bg-body);
             color: var(--text-main);
-            transition: background-color 0.3s ease, color 0.3s ease;
+            transition: color 0.3s ease;
             -webkit-tap-highlight-color: transparent;
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+        
+        /* Camada de fundo isolada e ANIMADA */
+        body::before {
+            content: "";
+            position: fixed;
+            top: -25%;
+            left: -25%;
+            width: 150%;
+            height: 150%;
+            background: var(--bg-gradient);
+            background-size: cover;
+            z-index: -1;
+            pointer-events: none;
+            will-change: transform;
+            animation: bgSpin 45s alternate infinite ease-in-out;
+        }
+
+        @keyframes bgSpin {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            50% { transform: translate(-5%, -8%) rotate(3deg); }
+            100% { transform: translate(5%, 3%) rotate(-3deg); }
         }
 
         h1, h2, h3, .font-heading {
             font-family: 'Montserrat', sans-serif;
             color: var(--text-heading);
         }
-        
-        /* Utilitários de Cor CSS Variables */
-        .text-theme-main { color: var(--text-main); }
-        .text-theme-muted { color: var(--text-muted); }
-        .text-theme-heading { color: var(--text-heading); }
-        .bg-theme-card { background-color: var(--bg-card); }
-        
-        .shadow-soft {
-            box-shadow: 0 4px 6px -1px var(--shadow-color), 0 2px 4px -1px var(--shadow-color);
+
+        /* --- HEADER FIXO & GLASSMORPHISM --- */
+
+        /* 1. HEADER (Fixo no Topo) */
+        .glass-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            z-index: 100;
+            
+            background: var(--glass-header-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--glass-border);
+            
+            /* Performance */
+            transform: translateZ(0); 
+            will-change: transform;
+        }
+
+        /* 2. AJUSTE DE MARGEM DO CONTEÚDO */
+        /* Definimos um valor padrão seguro, mas o JS vai ajustar pixel-perfect */
+        main {
+            min-height: 80vh;
+            will-change: transform;
+            padding-top: 240px; /* Valor seguro inicial para mobile */
+            transition: padding-top 0.3s ease; /* Transição suave se o JS ajustar */
+        }
+
+        @media (min-width: 768px) {
+            main {
+                padding-top: 160px; /* Valor seguro inicial para desktop */
+            }
+        }
+
+        /* 3. CONTEÚDO SCROLLÁVEL (Vidro Leve - Sem Blur Pesado) */
+        .glass-panel, .mobile-card, .dashboard-card {
+            background: var(--glass-card-bg);
+            border: 1px solid var(--glass-border);
+            box-shadow: var(--glass-shadow);
+            backface-visibility: hidden;
+            transform: translateZ(0);
         }
 
         /* Tabs */
@@ -158,191 +212,141 @@
             position: relative;
             color: var(--text-muted);
             font-weight: 600;
-            padding: 12px 20px;
+            padding: 10px 18px;
             transition: all 0.3s;
             white-space: nowrap;
-            border-bottom: 2px solid transparent;
+            border-radius: 99px;
+            margin-right: 4px;
         }
-        .tab-btn:hover {
-            color: var(--nav-tab-active);
+        .tab-btn:hover { color: var(--nav-tab-active); background-color: var(--nav-tab-hover); }
+        .tab-btn.active { 
+            color: var(--nav-tab-active); 
             background-color: var(--nav-tab-hover);
-        }
-        .tab-btn.active {
-            color: var(--nav-tab-active);
-            border-bottom-color: var(--nav-tab-active);
+            box-shadow: 0 0 0 1px var(--nav-tab-active);
         }
 
         /* Tabela */
-        .custom-table {
-            border-collapse: separate;
-            border-spacing: 0;
-            width: 100%;
-        }
+        .custom-table { border-collapse: separate; border-spacing: 0; width: 100%; }
         .custom-table th {
-            background-color: var(--bg-body);
             color: var(--text-muted);
             font-family: 'Montserrat', sans-serif;
             font-size: 0.7rem;
             text-transform: uppercase;
             letter-spacing: 0.08em;
             padding: 16px;
-            border-bottom: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--glass-border);
             font-weight: 700;
+            background-color: rgba(0,0,0,0.02);
         }
         .custom-table td {
             padding: 16px;
-            border-bottom: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--glass-border);
             vertical-align: middle;
-            background-color: var(--bg-card);
-            transition: background-color 0.2s;
             color: var(--text-main);
         }
-        .custom-table tr:hover td {
-            background-color: var(--bg-hover);
+        .custom-table td.col-highlight { 
+            background-color: rgba(125, 125, 125, 0.03); 
+            border-right: 1px solid var(--glass-border); 
         }
         
-        .custom-table td.col-highlight {
-            background-color: var(--bg-hover);
-            border-right: 1px solid var(--border-color);
-            position: relative;
-        }
-        
-        /* Indicadores Coloridos */
         .date-indicator-sab { border-left: 4px solid var(--card-border-sabado); }
         .date-indicator-dom { border-left: 4px solid var(--card-border-domingo); }
         .date-indicator-other { border-left: 4px solid var(--card-border-padrao); }
 
         .badge-ministerio {
-            display: inline-flex;
-            align-items: center;
+            display: inline-flex; align-items: center; 
             background-color: var(--badge-bg);
-            color: var(--badge-text);
+            color: var(--badge-text); 
             border: 1px solid var(--badge-border);
-            font-size: 0.75rem;
-            padding: 4px 10px;
-            border-radius: 6px;
-            font-weight: 600;
-            letter-spacing: 0.03em;
+            font-size: 0.7rem; padding: 4px 10px; border-radius: 6px;
+            font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase;
         }
 
-        /* Mobile Card */
+        /* Cards Mobile */
         .mobile-card {
-            background: var(--bg-card);
-            border-radius: 12px;
-            padding: 16px;
-            box-shadow: 0 2px 5px var(--shadow-color);
+            border-radius: 16px; padding: 20px;
             margin-bottom: 16px;
-            border: 1px solid var(--border-color);
             border-left-width: 5px;
         }
         .mobile-card-sab { border-left-color: var(--card-border-sabado); }
         .mobile-card-dom { border-left-color: var(--card-border-domingo); }
         .mobile-card-other { border-left-color: var(--card-border-padrao); }
 
-        .info-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 12px;
-            margin-top: 12px;
+        .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 12px; }
+        
+        .info-item, .music-block { 
+            background-color: rgba(125, 125, 125, 0.05); /* Fundo sutil dentro do card */
+            padding: 10px; border-radius: 10px; 
+            border: 1px solid var(--glass-border); 
         }
-        .music-block {
-            grid-column: span 2;
-            background-color: var(--bg-body);
-            padding: 12px;
-            border-radius: 8px;
-            border: 1px solid var(--border-color);
-        }
+        .music-block { grid-column: span 2; }
+        .info-label { font-size: 0.65rem; text-transform: uppercase; color: var(--text-muted); margin-bottom: 4px; font-weight: 700; display: flex; align-items: center; gap: 6px; }
 
-        .info-item {
-            background-color: var(--bg-body);
-            padding: 10px;
-            border-radius: 8px;
-            border: 1px solid var(--border-color);
-        }
-        .info-label {
-            font-size: 0.65rem;
-            text-transform: uppercase;
-            color: var(--text-muted);
-            margin-bottom: 4px;
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-            gap: 4px;
-        }
-
-        /* Dashboard de Hoje */
+        /* Dashboard */
         .dashboard-card {
-            background-color: var(--dash-bg);
-            border: 2px solid var(--dash-border);
-            border-radius: 12px;
-            padding: 20px;
-            margin-bottom: 24px;
-            box-shadow: 0 8px 15px var(--shadow-color);
-            position: relative;
+            border-top: 4px solid var(--dash-border); 
+            border-radius: 20px; 
+            padding: 24px; 
+            margin-bottom: 32px;
+            position: relative; 
             overflow: hidden;
         }
+        .dashboard-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 24px; padding-bottom: 16px; border-bottom: 1px solid var(--glass-border); }
+        .today-badge { 
+            background: linear-gradient(135deg, var(--brand-secondary), #8a7310);
+            color: #ffffff; font-size: 0.75rem; padding: 6px 14px; border-radius: 99px; text-transform: uppercase; font-weight: 800; letter-spacing: 0.05em; box-shadow: 0 4px 10px rgba(0,0,0,0.15); 
+        }
         
-        .dashboard-header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 16px;
-            padding-bottom: 12px;
-            border-bottom: 1px solid var(--border-color);
+        /* Inputs & Controles */
+        .theme-toggle-btn {
+            background-color: var(--glass-card-bg); border: 1px solid var(--glass-border); color: var(--text-heading);
+            width: 44px; height: 44px; display: flex; align-items: center; justify-content: center;
+            border-radius: 50%; cursor: pointer; transition: all 0.3s;
+        }
+        .theme-toggle-btn:hover { transform: scale(1.1); border-color: var(--brand-secondary); color: var(--brand-secondary); }
+
+        .month-select-wrapper { position: relative; min-width: 200px; }
+        .month-select-input {
+            appearance: none; -webkit-appearance: none; width: 100%;
+            background-color: var(--glass-card-bg); color: var(--text-heading);
+            border: 1px solid var(--glass-border); border-radius: 12px;
+            padding: 12px 36px 12px 16px; font-size: 0.9rem; font-weight: 600;
+            font-family: 'Montserrat', sans-serif; cursor: pointer;
+            transition: all 0.2s;
+        }
+        .month-select-input:focus { outline: none; border-color: var(--brand-secondary); }
+
+        .glass-input {
+            background-color: var(--glass-card-bg);
+            border: 1px solid var(--glass-border);
+            color: var(--text-main);
+        }
+        .glass-input:focus { border-color: var(--brand-secondary); }
+        
+        /* Animações */
+        @keyframes fadeInMove {
+            0% { opacity: 0; transform: translateY(8px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animate-tab {
+            animation: fadeInMove 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
 
-        .today-badge {
-            background-color: var(--brand-secondary);
-            color: #ffffff;
-            font-size: 0.7rem;
-            padding: 4px 12px;
-            border-radius: 20px;
-            text-transform: uppercase;
-            font-weight: 800;
-            letter-spacing: 0.05em;
-        }
-        
-        .theme-toggle-btn {
-            background-color: var(--bg-body);
-            border: 1px solid var(--border-color);
-            color: var(--text-heading);
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-        .theme-toggle-btn:hover {
-            transform: scale(1.1);
-            border-color: var(--brand-primary);
-            color: var(--brand-primary);
-        }
     </style>
 </head>
 <body class="flex flex-col min-h-screen transition-colors duration-300">
 
-    <!-- Cabeçalho 
-         CORREÇÃO: Alterado de 'sticky top-0' para 'relative md:sticky md:top-0'.
-         Isso remove o comportamento fixo no celular (evitando sobreposição/ocupação de tela)
-         mas mantém o menu fixo no computador onde há espaço.
-         Adicionado estilo de background explícito.
-    -->
-    <header style="background-color: var(--bg-header);" class="relative md:sticky md:top-0 z-50 border-b border-[var(--border-color)] shadow-sm transition-colors duration-300">
-        <!-- CORREÇÃO: Adicionado 'justify-center' e removido o comportamento de expansão total para centralizar o bloco -->
+    <header class="glass-header" id="mainHeader">
         <div class="container mx-auto px-4 py-4 flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8">
             <div class="flex items-center justify-between w-full md:w-auto">
                 <div class="flex items-center gap-3">
-                    <!-- Logo Box com Cor Variável -->
-                    <div style="background-color: var(--logo-bg); color: var(--logo-icon);" class="w-10 h-10 md:w-12 md:h-12 rounded-lg flex items-center justify-center shadow-lg transform rotate-3 flex-shrink-0 transition-colors duration-300">
-                        <i class="fas fa-church text-lg md:text-xl"></i>
+                    <div style="background-color: var(--logo-bg); color: var(--logo-icon);" class="w-10 h-10 md:w-12 md:h-12 rounded-xl flex items-center justify-center shadow-md transform rotate-3 flex-shrink-0 transition-colors border border-white/10">
+                        <img src="img/adventist.svg" alt="Adventistas">
                     </div>
                     <div>
-                        <!-- Título e Subtítulo com Cores Variáveis -->
-                        <h1 style="color: var(--logo-title);" class="text-lg md:text-xl font-bold leading-tight tracking-tight transition-colors duration-300">IASD TN1</h1>
-                        <p style="color: var(--logo-subtitle);" class="text-[10px] md:text-xs font-semibold uppercase tracking-widest transition-colors duration-300">Escalas Online</p>
+                        <h1 style="color: var(--logo-title);" class="text-lg md:text-xl font-extrabold leading-tight tracking-tight transition-colors">IASD BTN 1</h1>
+                        <p style="color: var(--logo-subtitle);" class="text-[10px] md:text-xs font-bold uppercase tracking-widest transition-colors">Escalas Online</p>
                     </div>
                 </div>
                 
@@ -352,14 +356,13 @@
                 </button>
             </div>
 
-            <!-- CORREÇÃO: Removido 'flex-grow' e definido largura fixa para desktop para manter centralização -->
             <div class="w-full md:w-[450px]">
                 <div class="relative w-full group">
-                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                    <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
                         <i class="fas fa-search text-[var(--text-muted)]"></i>
                     </div>
                     <input type="text" id="searchInput" placeholder="Buscar nome ou data..." 
-                        class="w-full pl-10 pr-4 py-2.5 rounded-lg border border-[var(--border-color)] bg-[var(--input-bg)] text-[var(--text-main)] placeholder-[var(--text-muted)] focus:outline-none focus:ring-2 focus:ring-[var(--brand-primary)] transition-all shadow-inner text-sm">
+                        class="glass-input w-full pl-10 pr-4 py-3 rounded-xl focus:outline-none transition-all shadow-inner text-sm font-medium">
                     <button id="clearBtn" class="hidden absolute inset-y-0 right-0 pr-3 flex items-center text-[var(--text-muted)] hover:text-red-500 cursor-pointer p-2" onclick="clearSearch()">
                         <i class="fas fa-times"></i>
                     </button>
@@ -367,81 +370,105 @@
             </div>
         </div>
         
-        <div style="background-color: var(--bg-header);" class="border-t border-[var(--border-color)] shadow-sm md:shadow-none transition-colors duration-300">
+        <div class="border-t border-[var(--glass-border)] shadow-sm md:shadow-none transition-colors duration-300">
             <div class="container mx-auto px-4 py-2 md:py-0">
-                <div class="md:hidden relative">
+                <div class="md:hidden relative my-2">
                     <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                         <i class="fas fa-filter text-[var(--logo-subtitle)] text-xs"></i>
                     </div>
                     <select id="tabsSelect" onchange="switchTab(this.value)" 
-                        class="block w-full pl-9 pr-10 py-3 text-sm font-semibold text-[var(--text-heading)] bg-[var(--input-bg)] border border-[var(--border-color)] rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--brand-primary)] appearance-none shadow-sm transition-all">
+                        class="glass-input block w-full pl-9 pr-10 py-3 text-sm font-semibold rounded-xl appearance-none shadow-sm transition-all">
                     </select>
                     <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-[var(--text-muted)]">
                         <i class="fas fa-chevron-down text-xs"></i>
                     </div>
                 </div>
 
-                <!-- CORREÇÃO: Mantido 'justify-center' para centralizar a navegação no desktop -->
-                <nav class="hidden md:flex justify-center space-x-1 overflow-x-auto scrollbar-hide" id="tabsContainer"></nav>
+                <nav class="hidden md:flex justify-center space-x-2 overflow-x-auto scrollbar-hide py-3" id="tabsContainer"></nav>
             </div>
         </div>
     </header>
 
-    <!-- Conteúdo Principal -->
-    <main class="flex-grow container mx-auto px-4 py-6 md:py-8 max-w-7xl">
-        <div class="flex flex-col md:flex-row justify-between items-end mb-6 gap-2 md:gap-4">
+    <main id="mainContent" class="flex-grow container mx-auto px-4 max-w-7xl">
+        <div class="flex flex-col md:flex-row justify-between items-end mb-8 gap-4 md:gap-6">
             <div>
-                <span class="inline-block px-3 py-1 bg-[var(--bg-body)] text-[var(--text-muted)] text-xs font-bold rounded-full mb-2 uppercase tracking-wide border border-[var(--border-color)]">Agenda Mensal</span>
-                <h2 class="text-2xl md:text-3xl font-bold" id="pageTitle">Visão Geral</h2>
+                <span class="inline-block px-4 py-1.5 bg-[var(--badge-bg)] text-[var(--text-heading)] text-xs font-bold rounded-full mb-3 uppercase tracking-wide border border-[var(--badge-border)] shadow-sm">
+                    <i class="fas fa-calendar-check mr-1 text-[var(--brand-secondary)]"></i> Agenda Mensal
+                </span>
+                <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight drop-shadow-sm" id="pageTitle">Visão Geral</h2>
             </div>
-            <div class="flex justify-between w-full md:w-auto items-end">
-                <div class="md:text-right">
-                    <p class="text-xs md:text-sm font-medium text-[var(--text-muted)] uppercase tracking-wide">Mês Vigente</p>
-                    <p style="color: var(--logo-subtitle);" class="text-xl md:text-2xl font-bold">Janeiro 2026</p>
-                </div>
-                <div class="md:hidden text-xs text-[var(--text-muted)] italic">
-                    <i class="fas fa-mobile-alt mr-1"></i>Modo Mobile
+            
+            <div class="flex flex-col md:items-end w-full md:w-auto mt-4 md:mt-0">
+                <p class="text-xs font-bold text-[var(--text-muted)] uppercase tracking-wide mb-2 px-1">Mês de Referência</p>
+                
+                <div class="month-select-wrapper group">
+                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                     </div>
+                    
+                    <select id="monthSelector" onchange="changeMonth(this.value)" class="month-select-input">
+                        </select>
+                    
+                    <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+                        <i class="fas fa-chevron-down text-[var(--text-muted)] text-xs group-hover:text-[var(--brand-secondary)] transition-colors"></i>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <div id="searchFeedback" class="hidden mb-6 bg-[var(--bg-card)] border border-[var(--border-color)] text-[var(--text-main)] rounded-lg p-4 shadow-lg flex items-center justify-between transform transition-all">
+        <div id="searchFeedback" class="glass-panel hidden mb-6 text-[var(--text-main)] rounded-xl p-4 flex items-center justify-between transform transition-all">
             <div class="flex items-center">
-                <div style="color: var(--brand-secondary);" class="bg-[var(--bg-body)] p-2 rounded-full mr-3 border border-[var(--border-color)]">
+                <div style="color: var(--brand-secondary);" class="bg-[var(--glass-card-bg)] p-2 rounded-full mr-3 border border-[var(--glass-border)]">
                     <i class="fas fa-search"></i>
                 </div>
                 <div class="text-sm">
-                    <p class="opacity-75 text-xs text-[var(--text-muted)]">Resultados para:</p>
-                    <p style="color: var(--brand-secondary);" class="font-bold text-base" id="searchTermDisplay"></p>
+                    <p class="opacity-75 text-xs text-[var(--text-muted)] uppercase font-bold">Filtrando por:</p>
+                    <p style="color: var(--brand-secondary);" class="font-bold text-lg leading-none" id="searchTermDisplay"></p>
                 </div>
             </div>
-            <button onclick="clearSearch()" class="text-xs bg-[var(--bg-body)] hover:bg-[var(--bg-hover)] text-[var(--text-main)] border border-[var(--border-color)] px-3 py-2 rounded transition-colors whitespace-nowrap ml-2">
+            <button onclick="clearSearch()" class="text-xs bg-[var(--glass-card-bg)] hover:bg-white/20 text-[var(--text-main)] border border-[var(--glass-border)] px-4 py-2 rounded-lg transition-colors whitespace-nowrap ml-2 font-bold">
                 Limpar
             </button>
         </div>
 
-        <div id="contentContainer"></div>
+        <div id="contentContainer" class="animate-tab"></div>
 
         <div id="emptyState" class="hidden flex flex-col items-center justify-center py-16 text-center">
-            <div class="bg-[var(--bg-body)] border border-[var(--border-color)] rounded-full p-6 mb-4">
-                <i class="fas fa-search-minus text-[var(--text-muted)] text-4xl"></i>
+            <div class="bg-[var(--glass-card-bg)] border border-[var(--glass-border)] rounded-full p-8 mb-4 shadow-lg">
+                <i class="fas fa-search-minus text-[var(--text-muted)] text-4xl opacity-50"></i>
             </div>
-            <h3 class="text-lg font-bold">Nenhum registro encontrado</h3>
-            <p class="text-[var(--text-muted)] mt-1 max-w-xs mx-auto text-sm">Tente buscar por outro termo ou limpe o filtro para ver tudo.</p>
-            <button onclick="clearSearch()" style="color: var(--brand-secondary);" class="mt-4 font-bold text-sm hover:underline">Ver Agenda Completa</button>
+            <h3 class="text-xl font-bold text-[var(--text-heading)]">Nenhum registro encontrado</h3>
+            <p class="text-[var(--text-muted)] mt-2 max-w-xs mx-auto text-sm">Tente buscar por outro termo ou limpe o filtro para ver tudo.</p>
+            <button onclick="clearSearch()" style="color: var(--brand-secondary);" class="mt-6 font-bold text-sm hover:underline uppercase tracking-wider">Ver Agenda Completa</button>
         </div>
     </main>
 
-    <footer class="py-8 text-center bg-[var(--header-bg)] border-t border-[var(--border-color)] mt-8 transition-colors duration-300">
+    <footer class="py-12 text-center glass-panel border-t border-[var(--glass-border)] mt-12 transition-colors duration-300">
         <div class="flex flex-col items-center">
-            <i class="fas fa-church text-[var(--text-muted)] text-2xl mb-3"></i>
-            <p class="text-xs text-[var(--text-muted)] font-medium tracking-wide">&copy; 2026 Igreja Adventista do Sétimo Dia - Tancredo Neves 1</p>
-            <p class="text-[10px] text-[var(--text-muted)] mt-1">Deus seja louvado</p>
+            <div class="w-14 h-14 rounded-2xl bg-[var(--glass-card-bg)] flex items-center justify-center mb-4 text-[var(--text-muted)] border border-[var(--glass-border)] shadow-sm">
+                <img src="img/adventist.svg" alt="Adventistas" class="w-8 opacity-80">
+            </div>
+            <p class="text-sm text-[var(--text-heading)] font-bold tracking-wide">&copy; 2026 Igreja Adventista do Sétimo Dia - Tancredo Neves 1</p>
+            <p class="text-xs text-[var(--text-muted)] mt-1 font-medium">Deus seja louvado</p>
         </div>
     </footer>
 
-    <!-- JavaScript -->
     <script>
+        // --- 0. AJUSTE AUTOMÁTICO DE PADDING (Header Fixo) ---
+        function adjustMainPadding() {
+            const header = document.getElementById('mainHeader');
+            const main = document.getElementById('mainContent');
+            if (header && main) {
+                // Pega a altura real do header + um respiro de 30px
+                const headerHeight = header.offsetHeight;
+                main.style.paddingTop = (headerHeight + 30) + 'px';
+            }
+        }
+        
+        // Executa ao carregar e ao redimensionar a tela
+        window.addEventListener('load', adjustMainPadding);
+        window.addEventListener('resize', adjustMainPadding);
+
+        // --- 1. CONFIGURAÇÃO DE TEMA ---
         if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
             document.documentElement.classList.add('dark');
         } else {
@@ -458,12 +485,12 @@
             }
         }
 
-        const dataBase = [
+        // --- 2. BASE DE DADOS MULTI-MÊS ---
+        
+        // Dados de JANEIRO 2026
+        const db_janeiro_2026 = [
             {
-                id: "ministerios",
-                label: "Ministérios",
-                category: "Ministérios",
-                icon: "fa-bullhorn",
+                id: "ministerios", label: "Ministérios", category: "Ministérios", icon: "fa-bullhorn",
                 items: [
                     { date: "07/01 (Qua)", role: "Direção", name: "Profecia" },
                     { date: "14/01 (Qua)", role: "Direção", name: "Adolescente e Criança" },
@@ -478,10 +505,7 @@
                 ]
             },
             {
-                id: "musica",
-                label: "Música / Louvor",
-                category: "Música",
-                icon: "fa-music",
+                id: "musica", label: "Música / Louvor", category: "Música", icon: "fa-music",
                 items: [
                     { date: "11/01 (Dom)", role: "Cânticos", name: "Bia / Cleonice", songs: ["1. SOU AVENTUREIRO", "2. EU SOU FELIZ", "3. QUEM FEZ"] },
                     { date: "18/01 (Dom)", role: "Cânticos", name: "Mateus / Karina", songs: ["1. INABALÁVEL", "2. ENQUANTO EU VIVER", "3. ESPERA EM DEUS"] },
@@ -497,10 +521,7 @@
                 ]
             },
             {
-                id: "sonoplastia",
-                label: "Sonoplastia",
-                category: "Sonoplastia",
-                icon: "fa-sliders-h",
+                id: "sonoplastia", label: "Sonoplastia", category: "Sonoplastia", icon: "fa-sliders-h",
                 items: [
                     { date: "07/01 (Qua)", role: "Mesa de Som", name: "Mateus Filipe" },
                     { date: "10/01 (Sáb)", role: "Mesa de Som", name: "Ana Paula" },
@@ -516,10 +537,7 @@
                 ]
             },
             {
-                id: "dizimos",
-                label: "Dízimos",
-                category: "Dízimos",
-                icon: "fa-hand-holding-dollar",
+                id: "dizimos", label: "Dízimos", category: "Dízimos", icon: "fa-hand-holding-dollar",
                 items: [
                     { date: "10/01 (Sáb)", role: "Recolhimento", name: "Cleonice" },
                     { date: "17/01 (Sáb)", role: "Recolhimento", name: "Camila" },
@@ -535,10 +553,7 @@
                 ]
             },
             {
-                id: "diaconos",
-                label: "Diáconos",
-                category: "Diáconos",
-                icon: "fa-user-tie",
+                id: "diaconos", label: "Diáconos", category: "Diáconos", icon: "fa-user-tie",
                 items: [
                     { date: "10/01 (Sáb)", role: "Plantão", name: "Fabiano" },
                     { date: "17/01 (Sáb)", role: "Plantão", name: "Damião" },
@@ -554,10 +569,7 @@
                 ]
             },
             {
-                id: "recepcao",
-                label: "Recepção",
-                category: "Recepção",
-                icon: "fa-heart",
+                id: "recepcao", label: "Recepção", category: "Recepção", icon: "fa-heart",
                 items: [
                     { date: "10/01 (Sáb)", role: "Equipe", name: "Mina e Igreja" },
                     { date: "17/01 (Sáb)", role: "Equipe", name: "Welma e Igreja" },
@@ -573,10 +585,7 @@
                 ]
             },
             {
-                id: "adoracao_infantil",
-                label: "Adoração Infantil",
-                category: "Adoração Infantil",
-                icon: "fa-child",
+                id: "adoracao_infantil", label: "Adoração Infantil", category: "Adoração Infantil", icon: "fa-child",
                 items: [
                     { date: "10/01 (Sáb)", role: "História", name: "Helen" },
                     { date: "17/01 (Sáb)", role: "História", name: "Camila" },
@@ -585,10 +594,7 @@
                 ]
             },
             {
-                id: "limpeza",
-                label: "Limpeza",
-                category: "Limpeza",
-                icon: "fa-broom",
+                id: "limpeza", label: "Limpeza", category: "Limpeza", icon: "fa-broom",
                 items: [
                     { date: "09/01 (Sex)", role: "Equipe", name: "Helen" },
                     { date: "16/01 (Sex)", role: "Equipe", name: "Mina" },
@@ -605,16 +611,156 @@
             }
         ];
 
+        // Dados de FEVEREIRO 2026
+        const db_fevereiro_2026 = [
+            {
+                id: "organizacao", label: "Organização", category: "Organização", icon: "fa-bullhorn",
+                items: [
+                    // Quartas
+                    { date: "04/02 (Qua)", role: "Direção", name: "Ministério da Saúde" },
+                    { date: "11/02 (Qua)", role: "Direção", name: "Adolescentes e Crianças" },
+                    { date: "18/02 (Qua)", role: "Direção", name: "Ministério da Mulher" },
+                    { date: "25/02 (Qua)", role: "Direção", name: "Lar e Família" },
+                    // Sábados
+                    { date: "07/02 (Sáb)", role: "Direção", name: "Ministério Pessoal" },
+                    { date: "14/02 (Sáb)", role: "Direção", name: "Mordomia Cristã" },
+                    { date: "21/02 (Sáb)", role: "Direção", name: "Direção" },
+                    { date: "28/02 (Sáb)", role: "Direção", name: "Escola Sabatina" },
+                    // Domingos
+                    { date: "01/02 (Dom)", role: "Direção", name: "Ministério do Homem" },
+                    { date: "08/02 (Dom)", role: "Direção", name: "Aventureiros" },
+                    { date: "15/02 (Dom)", role: "Direção", name: "Desbravadores" },
+                    { date: "22/02 (Dom)", role: "Direção", name: "Jovens" }
+                ]
+            },
+            {
+                id: "musica", label: "Música / Louvor", category: "Música", icon: "fa-music",
+                items: []
+            },
+            {
+                id: "sonoplastia", label: "Sonoplastia", category: "Sonoplastia", icon: "fa-sliders-h",
+                items: [
+                    // Quartas
+                    { date: "04/02 (Qua)", role: "Mesa de Som", name: "Mateus Filipe" },
+                    { date: "11/02 (Qua)", role: "Mesa de Som", name: "Evelyn Thaina" },
+                    { date: "18/02 (Qua)", role: "Mesa de Som", name: "Evelyn Thaina" },
+                    { date: "25/02 (Qua)", role: "Mesa de Som", name: "Mateus Filipe" },
+                    // Sábados
+                    { date: "07/02 (Sáb)", role: "Mesa de Som", name: "Karina Bezerra" },
+                    { date: "14/02 (Sáb)", role: "Mesa de Som", name: "Ana Paula" },
+                    { date: "21/02 (Sáb)", role: "Mesa de Som", name: "Fabiano Araújo" },
+                    { date: "28/02 (Sáb)", role: "Mesa de Som", name: "Fabiano Araújo" },
+                    // Domingos
+                    { date: "01/02 (Dom)", role: "Mesa de Som", name: "Fabiano Araújo" },
+                    { date: "08/02 (Dom)", role: "Mesa de Som", name: "Mateus Filipe" },
+                    { date: "15/02 (Dom)", role: "Mesa de Som", name: "Karina Bezerra" },
+                    { date: "22/02 (Dom)", role: "Mesa de Som", name: "Karina Bezerra" }
+                ]
+            },
+            {
+                id: "diaconisas", label: "Diaconisas", category: "Diaconisas", icon: "fa-hand-holding-heart",
+                items: [
+                    // Quartas
+                    { date: "04/02 (Qua)", role: "Equipe", name: "Helen" },
+                    { date: "11/02 (Qua)", role: "Equipe", name: "Welma" },
+                    { date: "18/02 (Qua)", role: "Equipe", name: "Gilsandra" },
+                    { date: "25/02 (Qua)", role: "Equipe", name: "Ângela" },
+                    // Sábados
+                    { date: "07/02 (Sáb)", role: "Equipe", name: "Evini" },
+                    { date: "14/02 (Sáb)", role: "Equipe", name: "Cleonice" },
+                    { date: "21/02 (Sáb)", role: "Equipe", name: "Helen" },
+                    { date: "28/02 (Sáb)", role: "Equipe", name: "Felismina" },
+                    // Domingos
+                    { date: "01/02 (Dom)", role: "Equipe", name: "Camila" },
+                    { date: "08/02 (Dom)", role: "Equipe", name: "Felismina" },
+                    { date: "15/02 (Dom)", role: "Equipe", name: "Cleonice" },
+                    { date: "22/02 (Dom)", role: "Equipe", name: "Evini" }
+                ]
+            },
+            {
+                id: "diaconos", label: "Diáconos", category: "Diáconos", icon: "fa-user-tie",
+                items: []
+            },
+            {
+                id: "recepcao", label: "Recepção", category: "Recepção", icon: "fa-heart",
+                items: [
+                    // Quartas
+                    { date: "04/02 (Qua)", role: "Equipe", name: "Igreja" },
+                    { date: "11/02 (Qua)", role: "Equipe", name: "Igreja" },
+                    { date: "18/02 (Qua)", role: "Equipe", name: "Igreja" },
+                    { date: "25/02 (Qua)", role: "Equipe", name: "Igreja" },
+                    // Sábados
+                    { date: "07/02 (Sáb)", role: "Equipe", name: "Felismina e Evini" },
+                    { date: "14/02 (Sáb)", role: "Equipe", name: "Ângela e Welma" },
+                    { date: "21/02 (Sáb)", role: "Equipe", name: "Evini e Igreja" },
+                    { date: "28/02 (Sáb)", role: "Equipe", name: "Ângela e Felismina" },
+                    // Domingos
+                    { date: "01/02 (Dom)", role: "Equipe", name: "Felismina" },
+                    { date: "08/02 (Dom)", role: "Equipe", name: "Welma" },
+                    { date: "15/02 (Dom)", role: "Equipe", name: "Evini" },
+                    { date: "22/02 (Dom)", role: "Equipe", name: "Igreja" }
+                ]
+            },
+            {
+                id: "adoracao_infantil", label: "Adoração Infantil", category: "Adoração Infantil", icon: "fa-child",
+                items: [
+                    { date: "07/02 (Sáb)", role: "História", name: "Karina" },
+                    { date: "14/02 (Sáb)", role: "História", name: "Helen" },
+                    { date: "21/02 (Sáb)", role: "História", name: "Gilsandra" },
+                    { date: "28/02 (Sáb)", role: "História", name: "Camila" }
+                ]
+            },
+            {
+                id: "limpeza", label: "Limpeza", category: "Limpeza", icon: "fa-broom",
+                items: [
+                    // Quartas
+                    { date: "04/02 (Qua)", role: "Limpeza", name: "Camila" },
+                    { date: "11/02 (Qua)", role: "Limpeza", name: "Cleonice" },
+                    { date: "18/02 (Qua)", role: "Limpeza", name: "Ângela" },
+                    { date: "25/02 (Qua)", role: "Limpeza", name: "Sandra" },
+                    // Sextas
+                    { date: "06/02 (Sex)", role: "Limpeza", name: "Helen" },
+                    { date: "13/02 (Sex)", role: "Limpeza", name: "Felismina" },
+                    { date: "20/02 (Sex)", role: "Limpeza", name: "Edilma" },
+                    { date: "27/02 (Sex)", role: "Limpeza", name: "Lúcia" },
+                    // Domingos
+                    { date: "01/02 (Dom)", role: "Limpeza", name: "Gilsandra" },
+                    { date: "08/02 (Dom)", role: "Limpeza", name: "Evini" },
+                    { date: "15/02 (Dom)", role: "Limpeza", name: "Welma" },
+                    { date: "22/02 (Dom)", role: "Limpeza", name: "Duda" }
+                ]
+            }
+        ];
+
+        // --- 3. CONTROLE DE DADOS ---
+        const databases = {
+            'janeiro_2026': { label: 'Janeiro 2026', data: db_janeiro_2026 },
+            'fevereiro_2026': { label: 'Fevereiro 2026', data: db_fevereiro_2026 }
+        };
+
+        let currentMonthKey = 'fevereiro_2026';
+        let dataBase = databases[currentMonthKey].data;
         let currentTab = 'geral';
+
+        // Elementos DOM
         const searchInput = document.getElementById('searchInput');
         const clearBtn = document.getElementById('clearBtn');
         const contentContainer = document.getElementById('contentContainer');
         const pageTitle = document.getElementById('pageTitle');
-        
-        // Define uma data manual apenas para teste (já que estamos fora de Jan 2026).
-        // Se quiser usar a data real do sistema, deixe como null.
-        // Exemplo: '10/01 (Sáb)'
-        const forceDateForTesting = null;
+        const monthSelector = document.getElementById('monthSelector');
+
+        function renderMonthSelector() {
+            monthSelector.innerHTML = Object.keys(databases).map(key => `
+                <option value="${key}" ${key === currentMonthKey ? 'selected' : ''}>${databases[key].label}</option>
+            `).join('');
+        }
+
+        function changeMonth(monthKey) {
+            currentMonthKey = monthKey;
+            dataBase = databases[monthKey].data;
+            renderTabs();
+            renderContent(searchInput.value);
+        }
 
         function normalizeString(str) {
             return str ? str.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase() : "";
@@ -625,16 +771,12 @@
             return parseInt(parts[1]) * 100 + parseInt(parts[0]);
         }
         
-        // Função para obter a data formatada de hoje (DD/MM (Dia))
         function getCurrentFormattedDate() {
-            if (forceDateForTesting) return forceDateForTesting;
-
             const date = new Date();
             const day = String(date.getDate()).padStart(2, '0');
             const month = String(date.getMonth() + 1).padStart(2, '0');
             const weekDays = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'];
             const weekDay = weekDays[date.getDay()];
-            
             return `${day}/${month} (${weekDay})`;
         }
 
@@ -649,6 +791,7 @@
                             ministerio: null,
                             dizimos: null,
                             diaconos: null,
+                            diaconisas: null,
                             recepcao: null,
                             limpeza: null,
                             musica_canticos: null,
@@ -657,9 +800,9 @@
                             adoracao: null
                         };
                     }
-                    if(cat.id === 'ministerios') events[item.date].ministerio = item.name;
-                    if(cat.id === 'dizimos') events[item.date].dizimos = item.name;
+                    if(cat.id === 'ministerios' || cat.id === 'organizacao') events[item.date].ministerio = item.name;
                     if(cat.id === 'diaconos') events[item.date].diaconos = item.name;
+                    if(cat.id === 'dizimos' || cat.id === 'diaconisas') events[item.date].diaconisas = item.name;
                     if(cat.id === 'recepcao') events[item.date].recepcao = item.name;
                     if(cat.id === 'limpeza') events[item.date].limpeza = item.name;
                     if(cat.id === 'adoracao_infantil') events[item.date].adoracao = item.name;
@@ -715,8 +858,14 @@
 
         function renderContent(filterQuery = "") {
             const normalizedQuery = normalizeString(filterQuery);
-            contentContainer.innerHTML = '';
             
+            // --- LÓGICA DE REINÍCIO DE ANIMAÇÃO ---
+            contentContainer.innerHTML = '';
+            contentContainer.classList.remove('animate-tab');
+            void contentContainer.offsetWidth;
+            contentContainer.classList.add('animate-tab');
+            // --- FIM DA LÓGICA DE ANIMAÇÃO ---
+
             if (filterQuery) {
                 document.getElementById('searchFeedback').classList.remove('hidden');
                 document.getElementById('searchTermDisplay').textContent = filterQuery;
@@ -730,23 +879,21 @@
                 const mergedData = getMergedData();
                 const currentFormattedDate = getCurrentFormattedDate();
                 
-                // --- DASHBOARD LOGIC START ---
-                // Find today's data
+                // Dashboard
                 const todayData = mergedData.find(d => d.dateStr === currentFormattedDate);
                 let dashboardHTML = '';
 
-                // Only show dashboard if it's the general tab, no search is active (or search matches today), and we found data
                 if (!filterQuery && todayData) {
-                     const showDashItem = (label, val, icon) => {
+                      const showDashItem = (label, val, icon) => {
                         if(!val) return '';
                         return `
-                        <div class="flex items-center p-3 bg-[var(--bg-body)] rounded-lg border border-[var(--border-color)]">
-                            <div class="w-8 h-8 rounded-full bg-[var(--badge-bg)] flex items-center justify-center mr-3 text-[var(--brand-secondary)] shrink-0 shadow-sm">
-                                <i class="fas ${icon} text-sm"></i>
+                        <div class="group flex items-center p-4 bg-[rgba(125,125,125,0.05)] rounded-xl border border-[var(--glass-border)] hover:border-[var(--brand-secondary)] transition-colors">
+                            <div class="w-10 h-10 rounded-xl bg-[var(--highlight-sabado-bg)] flex items-center justify-center mr-3 text-[var(--brand-secondary)] shrink-0 border border-white/10">
+                                <i class="fas ${icon}"></i>
                             </div>
-                            <div>
-                                <p class="text-[10px] uppercase font-bold text-[var(--text-muted)] tracking-wide">${label}</p>
-                                <p class="text-sm font-bold text-[var(--text-main)] leading-tight">${val}</p>
+                            <div class="overflow-hidden">
+                                <p class="text-[10px] uppercase font-bold text-[var(--text-muted)] tracking-wider truncate">${label}</p>
+                                <p class="text-sm md:text-base font-bold text-[var(--text-heading)] leading-tight truncate" title="${val}">${val}</p>
                             </div>
                         </div>`;
                     };
@@ -754,32 +901,39 @@
                     const showDashSongs = (songs) => {
                         if (!songs || songs.length === 0) return '';
                         return `
-                        <div class="col-span-1 md:col-span-2 p-3 bg-[var(--bg-body)] rounded-lg border border-[var(--border-color)]">
-                            <div class="flex items-center mb-2">
-                                <i class="fas fa-list-ol text-[var(--brand-secondary)] mr-2"></i>
-                                <p class="text-[10px] uppercase font-bold text-[var(--text-muted)] tracking-wide">Louvores</p>
+                        <div class="col-span-1 md:col-span-2 lg:col-span-2 p-4 bg-[rgba(125,125,125,0.05)] rounded-xl border border-[var(--glass-border)] relative overflow-hidden">
+                            <div class="flex items-center mb-3 relative z-10">
+                                <div class="w-8 h-8 rounded-full bg-[var(--highlight-domingo-bg)] flex items-center justify-center mr-3 text-[var(--highlight-domingo-text)] shrink-0">
+                                    <i class="fas fa-list-ol"></i>
+                                </div>
+                                <p class="text-xs uppercase font-bold text-[var(--text-muted)] tracking-wider">Louvores</p>
                             </div>
-                            <ul class="text-xs font-semibold text-[var(--text-main)] grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-1">
-                                ${songs.map(s => `<li>${s}</li>`).join('')}
+                            <ul class="space-y-2 relative z-10">
+                                ${songs.map((s, index) => `
+                                    <li class="flex items-start text-sm text-[var(--text-main)]">
+                                        <span class="font-mono text-[var(--brand-secondary)] text-xs mr-2 mt-0.5 font-bold">${index + 1}.</span>
+                                        <span class="font-medium">${s.replace(/^\d+\.\s*/, '')}</span>
+                                    </li>
+                                `).join('')}
                             </ul>
                         </div>`;
                     };
 
                     dashboardHTML = `
-                    <div class="dashboard-card fade-in">
+                    <div class="dashboard-card glass-panel fade-in">
                         <div class="dashboard-header">
                             <div class="flex items-center gap-3">
                                 <span class="today-badge">Hoje</span>
                                 <h3 class="text-lg md:text-xl font-black text-[var(--text-heading)] font-heading uppercase">${todayData.dateStr}</h3>
                             </div>
-                            ${todayData.ministerio ? `<span class="badge-ministerio shadow-sm">${todayData.ministerio}</span>` : ''}
+                            ${todayData.ministerio ? `<span class="badge-ministerio shadow-sm border border-[var(--brand-secondary)]">${todayData.ministerio}</span>` : ''}
                         </div>
                         
                         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3">
                             ${showDashItem('Sonoplastia', todayData.sonoplastia, 'fa-sliders-h')}
                             ${showDashItem('Cânticos', todayData.musica_canticos, 'fa-music')}
                             ${showDashItem('Adoração Inf.', todayData.adoracao, 'fa-child')}
-                            ${showDashItem('Dízimos', todayData.dizimos, 'fa-hand-holding-dollar')}
+                            ${showDashItem('Diaconisas', todayData.diaconisas, 'fa-hand-holding-heart')}
                             ${showDashItem('Diáconos', todayData.diaconos, 'fa-user-tie')}
                             ${showDashItem('Recepção', todayData.recepcao, 'fa-heart')}
                             ${showDashItem('Limpeza', todayData.limpeza, 'fa-broom')}
@@ -788,12 +942,11 @@
                     </div>
                     `;
                 }
-                // --- DASHBOARD LOGIC END ---
 
                 const filteredData = mergedData.filter(day => {
                     if (!filterQuery) return true;
                     const allValues = [
-                        day.dateStr, day.ministerio, day.dizimos, day.diaconos, 
+                        day.dateStr, day.ministerio, day.diaconisas, day.diaconos, 
                         day.recepcao, day.limpeza, day.musica_canticos, day.sonoplastia,
                         day.adoracao
                     ];
@@ -812,16 +965,16 @@
                 }
 
                 const desktopHTML = `
-                <div class="hidden md:block bg-[var(--bg-card)] rounded-xl shadow-soft overflow-hidden border border-[var(--border-color)]">
+                <div class="hidden md:block glass-panel rounded-2xl overflow-hidden">
                     <div class="overflow-x-auto">
                         <table class="custom-table text-left">
                             <thead>
                                 <tr>
-                                    <th class="w-1/6 border-r border-[var(--border-color)]">Data / Responsável</th>
+                                    <th class="w-1/6 border-r border-[var(--glass-border)]">Data / Responsável</th>
                                     <th class="text-center"><i style="color: var(--brand-secondary);" class="fas fa-sliders-h mr-1"></i> Som</th>
                                     <th class="text-center"><i style="color: var(--brand-secondary);" class="fas fa-music mr-1"></i> Cânticos</th>
                                     <th class="w-1/6 text-center"><i style="color: var(--brand-secondary);" class="fas fa-list-ol mr-1"></i> Louvor</th>
-                                    <th class="text-center"><i style="color: var(--brand-secondary);" class="fas fa-hand-holding-dollar mr-1"></i> Dízimos</th>
+                                    <th class="text-center"><i style="color: var(--brand-secondary);" class="fas fa-hand-holding-heart mr-1"></i> Diaconisas</th>
                                     <th class="text-center"><i style="color: var(--brand-secondary);" class="fas fa-user-tie mr-1"></i> Diáconos</th>
                                     <th class="text-center"><i style="color: var(--brand-secondary);" class="fas fa-heart mr-1"></i> Recepção</th>
                                     <th class="text-center"><i style="color: var(--brand-secondary);" class="fas fa-child mr-1"></i> Adoração Inf.</th>
@@ -830,9 +983,8 @@
                             </thead>
                             <tbody>
                                 ${filteredData.map(day => {
-                                    let dateColorClass = "";
-                                    let indicatorClass = "date-indicator-other";
                                     let dateStyle = "color: var(--text-muted);";
+                                    let indicatorClass = "date-indicator-other";
                                     let rowBgStyle = "";
                                     
                                     if(day.dateStr.includes('Sáb')) { 
@@ -850,10 +1002,10 @@
                                         ? `<div class="mt-2"><span class="badge-ministerio">${day.ministerio}</span></div>` 
                                         : `<span class="block text-xs text-[var(--text-muted)] mt-2 font-light italic">Sem direção</span>`;
                                     
-                                    const makeCell = (val) => val ? `<span class="font-medium text-[var(--text-main)] text-sm">${val}</span>` : `<span class="text-[var(--text-muted)] text-xs">•</span>`;
+                                    const makeCell = (val) => val ? `<span class="font-medium text-[var(--text-main)] text-sm">${val}</span>` : `<span class="text-[var(--text-muted)] text-xs opacity-50">•</span>`;
                                     
                                     const makeSongsList = (songs) => {
-                                        if (!songs || songs.length === 0) return `<span class="text-[var(--text-muted)] text-xs">•</span>`;
+                                        if (!songs || songs.length === 0) return `<span class="text-[var(--text-muted)] text-xs opacity-50">•</span>`;
                                         return `<ul class="text-xs text-[var(--text-main)] space-y-1">${songs.map(s => `<li>${s}</li>`).join('')}</ul>`;
                                     };
 
@@ -863,13 +1015,13 @@
                                                 <span style="${dateStyle}" class="text-sm uppercase tracking-wider block font-heading">${day.dateStr}</span>
                                                 ${ministerioHtml}
                                             </td>
-                                            <td class="text-center align-top border-r border-[var(--border-color)]">${makeCell(day.sonoplastia)}</td>
-                                            <td class="text-center align-top border-r border-[var(--border-color)]">${makeCell(day.musica_canticos)}</td>
-                                            <td class="align-top border-r border-[var(--border-color)] p-3">${makeSongsList(day.musica_louvores)}</td>
-                                            <td class="text-center align-top border-r border-[var(--border-color)]">${makeCell(day.dizimos)}</td>
-                                            <td class="text-center align-top border-r border-[var(--border-color)]">${makeCell(day.diaconos)}</td>
-                                            <td class="text-center align-top border-r border-[var(--border-color)]">${makeCell(day.recepcao)}</td>
-                                            <td class="text-center align-top border-r border-[var(--border-color)]">${makeCell(day.adoracao)}</td>
+                                            <td class="text-center align-top border-r border-[var(--glass-border)]">${makeCell(day.sonoplastia)}</td>
+                                            <td class="text-center align-top border-r border-[var(--glass-border)]">${makeCell(day.musica_canticos)}</td>
+                                            <td class="align-top border-r border-[var(--glass-border)] p-3">${makeSongsList(day.musica_louvores)}</td>
+                                            <td class="text-center align-top border-r border-[var(--glass-border)]">${makeCell(day.diaconisas)}</td>
+                                            <td class="text-center align-top border-r border-[var(--glass-border)]">${makeCell(day.diaconos)}</td>
+                                            <td class="text-center align-top border-r border-[var(--glass-border)]">${makeCell(day.recepcao)}</td>
+                                            <td class="text-center align-top border-r border-[var(--glass-border)]">${makeCell(day.adoracao)}</td>
                                             <td class="text-center align-top">${makeCell(day.limpeza)}</td>
                                         </tr>
                                     `;
@@ -909,10 +1061,10 @@
                         };
 
                         return `
-                        <div class="mobile-card ${borderColorClass}">
-                            <div class="flex flex-col mb-3">
+                        <div class="mobile-card glass-panel ${borderColorClass}">
+                            <div class="flex flex-col mb-3 border-b border-[var(--glass-border)] pb-3">
                                 <span style="${dateStyle}" class="text-lg font-black font-heading tracking-wide">${day.dateStr}</span>
-                                ${day.ministerio ? `<div class="mt-1"><span class="badge-ministerio">${day.ministerio}</span></div>` : ''}
+                                ${day.ministerio ? `<div class="mt-2"><span class="badge-ministerio">${day.ministerio}</span></div>` : ''}
                             </div>
                             
                             <div class="info-grid">
@@ -920,7 +1072,7 @@
                                 ${showItem('Cânticos', day.musica_canticos, 'fa-music')}
                                 ${showSongs(day.musica_louvores)}
                                 ${showItem('Adoração Infantil', day.adoracao, 'fa-child')}
-                                ${showItem('Dízimos', day.dizimos, 'fa-hand-holding-dollar')}
+                                ${showItem('Diaconisas', day.diaconisas, 'fa-hand-holding-heart')}
                                 ${showItem('Diáconos', day.diaconos, 'fa-user-tie')}
                                 ${showItem('Recepção', day.recepcao, 'fa-heart')}
                                 ${showItem('Limpeza', day.limpeza, 'fa-broom')}
@@ -933,7 +1085,7 @@
 
             } else {
                 const categoryData = dataBase.find(d => d.id === currentTab);
-                let items = [...categoryData.items].sort((a,b) => getDateSortValue(a.date) - getDateSortValue(b.date));
+                let items = categoryData ? [...categoryData.items].sort((a,b) => getDateSortValue(a.date) - getDateSortValue(b.date)) : [];
 
                 if(filterQuery) {
                     items = items.filter(item => {
@@ -952,7 +1104,7 @@
                 }
 
                 contentContainer.innerHTML = `
-                <div class="bg-[var(--bg-card)] rounded-xl shadow-soft overflow-hidden border border-[var(--border-color)]">
+                <div class="glass-panel rounded-2xl overflow-hidden shadow-soft">
                     <table class="custom-table text-left">
                         <thead class="hidden md:table-header-group">
                             <tr>
@@ -976,14 +1128,14 @@
                                 }
 
                                 return `
-                                    <tr style="${rowBgStyle}" class="flex flex-col md:table-row border-b md:border-b-0 border-[var(--border-color)] last:border-0 p-4 md:p-0">
-                                        <td class="${dateColor} md:border-r border-[var(--border-color)] font-heading text-sm py-2 md:py-4 px-4 md:px-6 block md:table-cell align-top">
+                                    <tr style="${rowBgStyle}" class="flex flex-col md:table-row border-b md:border-b-0 border-[var(--glass-border)] last:border-0 p-4 md:p-0">
+                                        <td class="${dateColor} md:border-r border-[var(--glass-border)] font-heading text-sm py-2 md:py-4 px-4 md:px-6 block md:table-cell align-top">
                                             ${item.date}
                                         </td>
                                         <td class="py-2 md:py-4 px-4 md:px-6 block md:table-cell">
                                             <div class="flex flex-col md:flex-row md:items-start">
                                                 <div class="flex items-center mb-2 md:mb-0">
-                                                    <div class="w-8 h-8 rounded-full bg-[var(--bg-body)] flex items-center justify-center mr-3 text-[var(--text-muted)] shadow-sm shrink-0 border border-[var(--border-color)]">
+                                                    <div class="w-8 h-8 rounded-xl bg-[var(--glass-card-bg)] flex items-center justify-center mr-3 text-[var(--text-muted)] shadow-sm shrink-0 border border-[var(--glass-border)]">
                                                         <i class="fas ${categoryData.icon} text-xs"></i>
                                                     </div>
                                                 </div>
@@ -1001,12 +1153,13 @@
 
         function clearSearch() {
             searchInput.value = '';
-            renderContent('');
+            switchTab('geral');
         }
 
         searchInput.addEventListener('input', (e) => renderContent(e.target.value));
 
         document.addEventListener('DOMContentLoaded', () => {
+            renderMonthSelector();
             renderTabs();
             renderContent();
         });
