@@ -1,0 +1,302 @@
+        /* =========================================
+           SISTEMA DE TEMAS & PERFORMANCE
+           ========================================= */
+        :root {
+            /* Variáveis de Cor (Light Mode) */
+            --bg-gradient: radial-gradient(at 0% 0%, rgba(181, 156, 42, 0.18) 0px, transparent 55%), 
+                           radial-gradient(at 100% 0%, rgba(14, 102, 175, 0.18) 0px, transparent 55%), 
+                           radial-gradient(at 100% 100%, rgba(181, 156, 42, 0.12) 0px, transparent 55%), 
+                           radial-gradient(at 0% 100%, rgba(14, 102, 175, 0.12) 0px, transparent 55%),
+                           #f9fafb;
+
+            /* Cores de Vidro & Cards */
+            --glass-header-bg: rgba(255, 255, 255, 0.90);
+            --glass-card-bg: rgba(255, 255, 255, 0.75);
+            --glass-border: rgba(255, 255, 255, 0.6);
+            --glass-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            
+            --text-main: #374151;      
+            --text-heading: #111827;   
+            --text-muted: #6B7280;     
+            
+            --brand-primary: #333537;
+            --brand-secondary: #b59c2a; 
+            
+            --logo-bg: #30343F;
+            --logo-icon: #ffffff;
+            --logo-title: #30343F;
+            --logo-subtitle: #30343F;
+            
+            --badge-bg: rgba(243, 244, 246, 0.9);
+            --badge-text: #1F2937;
+            --badge-border: rgba(229, 231, 235, 0.6);
+            
+            --nav-tab-active: #b59c2a;
+            --nav-tab-hover: rgba(181, 156, 42, 0.1);
+            
+            --card-border-sabado: #b59c2a;
+            --card-border-domingo: #0e66af;
+            --card-border-padrao: rgba(229, 231, 235, 0.6);
+            
+            --highlight-sabado-text: #b59c2a;
+            --highlight-domingo-text: #0e66af;
+            
+            --highlight-sabado-bg: rgba(181, 156, 42, 0.08);
+            --highlight-domingo-bg: rgba(14, 102, 175, 0.08);
+            
+            --dash-border: #b59c2a;
+        }
+
+        html.dark {
+            /* Variáveis de Cor (Dark Mode) */
+            --bg-gradient: radial-gradient(at 0% 0%, rgba(212, 175, 55, 0.15) 0px, transparent 55%), 
+                           radial-gradient(at 100% 0%, rgba(59, 130, 246, 0.15) 0px, transparent 55%), 
+                           radial-gradient(at 100% 100%, rgba(212, 175, 55, 0.05) 0px, transparent 55%), 
+                           radial-gradient(at 0% 100%, rgba(59, 130, 246, 0.05) 0px, transparent 55%),
+                           #0f1115;
+
+            --glass-header-bg: rgba(20, 22, 27, 0.90);
+            --glass-card-bg: rgba(30, 33, 40, 0.80);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --glass-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+            
+            --text-main: #E5E7EB;
+            --text-heading: #F9FAFB;
+            --text-muted: #9CA3AF;
+            
+            --brand-primary: #E5E7EB;
+            --brand-secondary: #D4AF37; 
+            
+            --logo-bg: #2E333D;
+            --logo-icon: #E5E7EB;
+            --logo-title: #E5E7EB;
+            --logo-subtitle: #9CA3AF;
+            
+            --badge-bg: rgba(45, 48, 58, 0.9);
+            --badge-text: #E5E7EB;
+            --badge-border: rgba(255, 255, 255, 0.1);
+            
+            --nav-tab-active: #D4AF37;
+            --nav-tab-hover: rgba(212, 175, 55, 0.15);
+            
+            --card-border-sabado: #D4AF37;
+            --card-border-domingo: #3B82F6;
+            --card-border-padrao: rgba(255, 255, 255, 0.08);
+            
+            --highlight-sabado-text: #D4AF37;
+            --highlight-domingo-text: #60A5FA;
+            
+            --highlight-sabado-bg: rgba(212, 175, 55, 0.15);
+            --highlight-domingo-bg: rgba(59, 130, 246, 0.15);
+            
+            --dash-border: #D4AF37;
+        }
+
+        /* --- CORREÇÃO DE SCROLL (BACKGROUND FIXO) --- */
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: var(--text-main);
+            transition: color 0.3s ease;
+            -webkit-tap-highlight-color: transparent;
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+        
+        /* Camada de fundo isolada e ANIMADA */
+        body::before {
+            content: "";
+            position: fixed;
+            top: -25%;
+            left: -25%;
+            width: 150%;
+            height: 150%;
+            background: var(--bg-gradient);
+            background-size: cover;
+            z-index: -1;
+            pointer-events: none;
+            will-change: transform;
+            animation: bgSpin 45s alternate infinite ease-in-out;
+        }
+
+        @keyframes bgSpin {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            50% { transform: translate(-5%, -8%) rotate(3deg); }
+            100% { transform: translate(5%, 3%) rotate(-3deg); }
+        }
+
+        h1, h2, h3, .font-heading {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text-heading);
+        }
+
+        /* --- HEADER FIXO & GLASSMORPHISM --- */
+
+        /* 1. HEADER (Fixo no Topo) */
+        .glass-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            z-index: 100;
+            
+            background: var(--glass-header-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--glass-border);
+            
+            /* Performance */
+            transform: translateZ(0); 
+            will-change: transform;
+        }
+
+        /* 2. AJUSTE DE MARGEM DO CONTEÚDO */
+        /* Definimos um valor padrão seguro, mas o JS vai ajustar pixel-perfect */
+        main {
+            min-height: 80vh;
+            will-change: transform;
+            padding-top: 240px; /* Valor seguro inicial para mobile */
+            transition: padding-top 0.3s ease; /* Transição suave se o JS ajustar */
+        }
+
+        @media (min-width: 768px) {
+            main {
+                padding-top: 160px; /* Valor seguro inicial para desktop */
+            }
+        }
+
+        /* 3. CONTEÚDO SCROLLÁVEL (Vidro Leve - Sem Blur Pesado) */
+        .glass-panel, .mobile-card, .dashboard-card {
+            background: var(--glass-card-bg);
+            border: 1px solid var(--glass-border);
+            box-shadow: var(--glass-shadow);
+            backface-visibility: hidden;
+            transform: translateZ(0);
+        }
+
+        /* Tabs */
+        .tab-btn {
+            position: relative;
+            color: var(--text-muted);
+            font-weight: 600;
+            padding: 10px 18px;
+            transition: all 0.3s;
+            white-space: nowrap;
+            border-radius: 99px;
+            margin-right: 4px;
+        }
+        .tab-btn:hover { color: var(--nav-tab-active); background-color: var(--nav-tab-hover); }
+        .tab-btn.active { 
+            color: var(--nav-tab-active); 
+            background-color: var(--nav-tab-hover);
+            box-shadow: 0 0 0 1px var(--nav-tab-active);
+        }
+
+        /* Tabela */
+        .custom-table { border-collapse: separate; border-spacing: 0; width: 100%; }
+        .custom-table th {
+            color: var(--text-muted);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            padding: 16px;
+            border-bottom: 1px solid var(--glass-border);
+            font-weight: 700;
+            background-color: rgba(0,0,0,0.02);
+        }
+        .custom-table td {
+            padding: 16px;
+            border-bottom: 1px solid var(--glass-border);
+            vertical-align: middle;
+            color: var(--text-main);
+        }
+        .custom-table td.col-highlight { 
+            background-color: rgba(125, 125, 125, 0.03); 
+            border-right: 1px solid var(--glass-border); 
+        }
+        
+        .date-indicator-sab { border-left: 4px solid var(--card-border-sabado); }
+        .date-indicator-dom { border-left: 4px solid var(--card-border-domingo); }
+        .date-indicator-other { border-left: 4px solid var(--card-border-padrao); }
+
+        .badge-ministerio {
+            display: inline-flex; align-items: center; 
+            background-color: var(--badge-bg);
+            color: var(--badge-text); 
+            border: 1px solid var(--badge-border);
+            font-size: 0.7rem; padding: 4px 10px; border-radius: 6px;
+            font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase;
+        }
+
+        /* Cards Mobile */
+        .mobile-card {
+            border-radius: 16px; padding: 20px;
+            margin-bottom: 16px;
+            border-left-width: 5px;
+        }
+        .mobile-card-sab { border-left-color: var(--card-border-sabado); }
+        .mobile-card-dom { border-left-color: var(--card-border-domingo); }
+        .mobile-card-other { border-left-color: var(--card-border-padrao); }
+
+        .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 12px; }
+        
+        .info-item, .music-block { 
+            background-color: rgba(125, 125, 125, 0.05); /* Fundo sutil dentro do card */
+            padding: 10px; border-radius: 10px; 
+            border: 1px solid var(--glass-border); 
+        }
+        .music-block { grid-column: span 2; }
+        .info-label { font-size: 0.65rem; text-transform: uppercase; color: var(--text-muted); margin-bottom: 4px; font-weight: 700; display: flex; align-items: center; gap: 6px; }
+
+        /* Dashboard */
+        .dashboard-card {
+            border-top: 4px solid var(--dash-border); 
+            border-radius: 20px; 
+            padding: 24px; 
+            margin-bottom: 32px;
+            position: relative; 
+            overflow: hidden;
+        }
+        .dashboard-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 24px; padding-bottom: 16px; border-bottom: 1px solid var(--glass-border); }
+        .today-badge { 
+            background: linear-gradient(135deg, var(--brand-secondary), #8a7310);
+            color: #ffffff; font-size: 0.75rem; padding: 6px 14px; border-radius: 99px; text-transform: uppercase; font-weight: 800; letter-spacing: 0.05em; box-shadow: 0 4px 10px rgba(0,0,0,0.15); 
+        }
+        
+        /* Inputs & Controles */
+        .theme-toggle-btn {
+            background-color: var(--glass-card-bg); border: 1px solid var(--glass-border); color: var(--text-heading);
+            width: 44px; height: 44px; display: flex; align-items: center; justify-content: center;
+            border-radius: 50%; cursor: pointer; transition: all 0.3s;
+        }
+        .theme-toggle-btn:hover { transform: scale(1.1); border-color: var(--brand-secondary); color: var(--brand-secondary); }
+
+        .month-select-wrapper { position: relative; min-width: 200px; }
+        .month-select-input {
+            appearance: none; -webkit-appearance: none; width: 100%;
+            background-color: var(--glass-card-bg); color: var(--text-heading);
+            border: 1px solid var(--glass-border); border-radius: 12px;
+            padding: 12px 36px 12px 16px; font-size: 0.9rem; font-weight: 600;
+            font-family: 'Montserrat', sans-serif; cursor: pointer;
+            transition: all 0.2s;
+        }
+        .month-select-input:focus { outline: none; border-color: var(--brand-secondary); }
+
+        .glass-input {
+            background-color: var(--glass-card-bg);
+            border: 1px solid var(--glass-border);
+            color: var(--text-main);
+        }
+        .glass-input:focus { border-color: var(--brand-secondary); }
+        
+        /* Animações */
+        @keyframes fadeInMove {
+            0% { opacity: 0; transform: translateY(8px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animate-tab {
+            animation: fadeInMove 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
