@@ -421,14 +421,154 @@
             }
         ];
 
+        // Dados de ABRIL 2026
+        const db_abril_2026 = [
+            {
+                id: "organizacao", label: "Organização", category: "Organização", icon: "fa-bullhorn",
+                items: [
+                    { date: "01/04 (Qua)", role: "Direção", name: "Ministério da Saúde" },
+                    { date: "08/04 (Qua)", role: "Direção", name: "Adolescentes e Crianças" },
+                    { date: "15/04 (Qua)", role: "Direção", name: "Ministério da Mulher" },
+                    { date: "22/04 (Qua)", role: "Direção", name: "Ministério Lar e Família" },
+                    { date: "29/04 (Qua)", role: "Direção", name: "Direção" },
+                    { date: "04/04 (Sáb)", role: "Direção", name: "Ministério Pessoal" },
+                    { date: "11/04 (Sáb)", role: "Direção", name: "Ministério de Mordomia" },
+                    { date: "18/04 (Sáb)", role: "Direção", name: "Escola Sabatina" },
+                    { date: "25/04 (Sáb)", role: "Direção", name: "Direção" },
+                    { date: "05/04 (Dom)", role: "Direção", name: "Profecias" },
+                    { date: "12/04 (Dom)", role: "Direção", name: "Aventureiros" },
+                    { date: "19/04 (Dom)", role: "Direção", name: "Desbravadores" },
+                    { date: "26/04 (Dom)", role: "Direção", name: "Ministério Jovem" }
+                ]
+            },
+            {
+                id: "musica", label: "Música / Louvor", category: "Música", icon: "fa-music",
+                items: [
+                    { date: "01/04 (Qua)", role: "Cânticos", name: "Wilson e Pedro", songs: ["Hino 409", "Hino 296", "Hino 46"] },
+                    { date: "08/04 (Qua)", role: "Cânticos", name: "Gil e Ângela", songs: ["Hino 458", "Hino 327", "Hino 367"] },
+                    { date: "15/04 (Qua)", role: "Cânticos", name: "Mina e Karina", songs: ["Hino 48", "Hino 344", "Hino 336"] },
+                    { date: "22/04 (Qua)", role: "Cânticos", name: "Helen e Camila", songs: ["Hino 361", "Hino 44", "Hino 42"] },
+                    { date: "29/04 (Qua)", role: "Cânticos", name: "Cleonice e Beatriz", songs: [] },
+                    { date: "04/04 (Sáb)", role: "Cânticos", name: "Artur e Fabiano", songs: ["Hino 369", "Hino 103", "Hino 135"] },
+                    { date: "11/04 (Sáb)", role: "Cânticos", name: "Welma e Lúcia", songs: ["Hino 117", "Hino 129", "Hino 143"] },
+                    { date: "18/04 (Sáb)", role: "Cânticos", name: "Thor e Givaldo", songs: ["Hino 115", "Hino 151", "Hino 156"] },
+                    { date: "25/04 (Sáb)", role: "Cânticos", name: "Evini e Paulinha", songs: ["Hino 440", "Hino 441", "Hino 444"] },
+                    { date: "05/04 (Dom)", role: "Cânticos", name: "Alice e Camila", songs: ["Hino 469", "Hino 35", "Hino 45"] },
+                    { date: "12/04 (Dom)", role: "Cânticos", name: "Ângela e Adriel", songs: ["Hino 517", "Hino 514", "Hino 551"] },
+                    { date: "19/04 (Dom)", role: "Cânticos", name: "Damião e Wilson", songs: ["Hino 207", "Hino 211", "Hino 235"] },
+                    { date: "26/04 (Dom)", role: "Cânticos", name: "Luciana e Edilma", songs: ["Hino 269", "Hino 288", "Hino 240"] }
+                ]
+            },
+            {
+                id: "sonoplastia", label: "Sonoplastia", category: "Sonoplastia", icon: "fa-sliders-h",
+                items: [
+                    { date: "01/04 (Qua)", role: "Mesa de Som", name: "Mateus Filipe" },
+                    { date: "08/04 (Qua)", role: "Mesa de Som", name: "Evelyn Thaina" },
+                    { date: "15/04 (Qua)", role: "Mesa de Som", name: "Adriel Antônio" },
+                    { date: "22/04 (Qua)", role: "Mesa de Som", name: "Adriel Antônio" },
+                    { date: "29/04 (Qua)", role: "Mesa de Som", name: "Mateus Filipe" },
+                    { date: "04/04 (Sáb)", role: "Mesa de Som", name: "Fabiano Araújo" },
+                    { date: "11/04 (Sáb)", role: "Mesa de Som", name: "Karina Bezerra" },
+                    { date: "18/04 (Sáb)", role: "Mesa de Som", name: "Ana Paula" },
+                    { date: "25/04 (Sáb)", role: "Mesa de Som", name: "Karina Bezerra" },
+                    { date: "05/04 (Dom)", role: "Mesa de Som", name: "Mateus Filipe" },
+                    { date: "12/04 (Dom)", role: "Mesa de Som", name: "Evelyn Thaina" },
+                    { date: "19/04 (Dom)", role: "Mesa de Som", name: "Ana Paula" },
+                    { date: "26/04 (Dom)", role: "Mesa de Som", name: "Evelyn Thaina" }
+                ]
+            },
+            {
+                id: "diaconisas", label: "Diaconisas", category: "Diaconisas", icon: "fa-hand-holding-heart",
+                items: [
+                    { date: "01/04 (Qua)", role: "Equipe", name: "Ângela" },
+                    { date: "08/04 (Qua)", role: "Equipe", name: "Gil" },
+                    { date: "15/04 (Qua)", role: "Equipe", name: "Mina" },
+                    { date: "22/04 (Qua)", role: "Equipe", name: "Helen" },
+                    { date: "29/04 (Qua)", role: "Equipe", name: "Cleonice" },
+                    { date: "04/04 (Sáb)", role: "Equipe", name: "Mina" },
+                    { date: "11/04 (Sáb)", role: "Equipe", name: "Welma" },
+                    { date: "18/04 (Sáb)", role: "Equipe", name: "Gil" },
+                    { date: "25/04 (Sáb)", role: "Equipe", name: "Evini" },
+                    { date: "05/04 (Dom)", role: "Equipe", name: "Cleonice" },
+                    { date: "12/04 (Dom)", role: "Equipe", name: "Camila" },
+                    { date: "19/04 (Dom)", role: "Equipe", name: "Ângela" },
+                    { date: "26/04 (Dom)", role: "Equipe", name: "Luciana" }
+                ]
+            },
+            {
+                id: "diaconos", label: "Diáconos", category: "Diáconos", icon: "fa-user-tie",
+                items: [
+                    { date: "01/04 (Qua)", role: "Plantão", name: "Givaldo" },
+                    { date: "08/04 (Qua)", role: "Plantão", name: "Ednaldo" },
+                    { date: "15/04 (Qua)", role: "Plantão", name: "Elivonaldo" },
+                    { date: "22/04 (Qua)", role: "Plantão", name: "Damião" },
+                    { date: "29/04 (Qua)", role: "Plantão", name: "Fabiano" },
+                    { date: "04/04 (Sáb)", role: "Plantão", name: "Ednaldo" },
+                    { date: "11/04 (Sáb)", role: "Plantão", name: "Damião" },
+                    { date: "18/04 (Sáb)", role: "Plantão", name: "Fabiano" },
+                    { date: "25/04 (Sáb)", role: "Plantão", name: "Elivonaldo" },
+                    { date: "05/04 (Dom)", role: "Plantão", name: "Givaldo" },
+                    { date: "12/04 (Dom)", role: "Plantão", name: "Wilson" },
+                    { date: "19/04 (Dom)", role: "Plantão", name: "Ednaldo" },
+                    { date: "26/04 (Dom)", role: "Plantão", name: "Givaldo" }
+                ]
+            },
+            {
+                id: "recepcao", label: "Recepção", category: "Recepção", icon: "fa-heart",
+                items: [
+                    { date: "01/04 (Qua)", role: "Equipe", name: "Ângela" },
+                    { date: "08/04 (Qua)", role: "Equipe", name: "Mina" },
+                    { date: "15/04 (Qua)", role: "Equipe", name: "Luciana" },
+                    { date: "22/04 (Qua)", role: "Equipe", name: "Pedro" },
+                    { date: "29/04 (Qua)", role: "Equipe", name: "Paulinha" },
+                    { date: "04/04 (Sáb)", role: "Equipe", name: "Gil e Welma" },
+                    { date: "11/04 (Sáb)", role: "Equipe", name: "Evini e Gil" },
+                    { date: "18/04 (Sáb)", role: "Equipe", name: "Welma e Ângela" },
+                    { date: "25/04 (Sáb)", role: "Equipe", name: "Dilma e Helen" },
+                    { date: "05/04 (Dom)", role: "Equipe", name: "Wilson" },
+                    { date: "12/04 (Dom)", role: "Equipe", name: "Alice" },
+                    { date: "19/04 (Dom)", role: "Equipe", name: "Thor" },
+                    { date: "26/04 (Dom)", role: "Equipe", name: "Evelin" }
+                ]
+            },
+            {
+                id: "adoracao_infantil", label: "Adoração Infantil", category: "Adoração Infantil", icon: "fa-child",
+                items: [
+                    { date: "04/04 (Sáb)", role: "História", name: "Fabiano" },
+                    { date: "11/04 (Sáb)", role: "História", name: "Gilsandra" },
+                    { date: "18/04 (Sáb)", role: "História", name: "Helen" },
+                    { date: "25/04 (Sáb)", role: "História", name: "Camila" }
+                ]
+            },
+            {
+                id: "limpeza", label: "Limpeza", category: "Limpeza", icon: "fa-broom",
+                items: [
+                    { date: "01/04 (Qua)", role: "Limpeza", name: "Evini" },
+                    { date: "08/04 (Qua)", role: "Limpeza", name: "Edilma" },
+                    { date: "15/04 (Qua)", role: "Limpeza", name: "Ângela" },
+                    { date: "22/04 (Qua)", role: "Limpeza", name: "Cleonice" },
+                    { date: "29/04 (Qua)", role: "Limpeza", name: "Luciana" },
+                    { date: "03/04 (Sex)", role: "Limpeza", name: "Mina" },
+                    { date: "10/04 (Sex)", role: "Limpeza", name: "Camila" },
+                    { date: "17/04 (Sex)", role: "Limpeza", name: "Sandra" },
+                    { date: "24/04 (Sex)", role: "Limpeza", name: "Helen" },
+                    { date: "05/04 (Dom)", role: "Limpeza", name: "Duda" },
+                    { date: "12/04 (Dom)", role: "Limpeza", name: "Welma" },
+                    { date: "19/04 (Dom)", role: "Limpeza", name: "Lúcia" },
+                    { date: "26/04 (Dom)", role: "Limpeza", name: "Gil" }
+                ]
+            }
+        ];
+
         // --- 3. CONTROLE DE DADOS ---
         const databases = {
             'janeiro_2026': { label: 'Janeiro 2026', data: db_janeiro_2026 },
             'fevereiro_2026': { label: 'Fevereiro 2026', data: db_fevereiro_2026 },
-            'marco_2026': { label: 'Março 2026', data: db_marco_2026 }
+            'marco_2026': { label: 'Março 2026', data: db_marco_2026 },
+            'abril_2026': { label: 'Abril 2026', data: db_abril_2026 }
         };
 
-        let currentMonthKey = 'marco_2026';
+        let currentMonthKey = 'abril_2026';
         let dataBase = databases[currentMonthKey].data;
         let currentTab = 'geral';
        
