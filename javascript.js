@@ -558,10 +558,10 @@
                     { date: "26/04 (Dom)", role: "Limpeza", name: "Gil" }
                 ]
             }
+        ];
         // Dados de MAIO 2026
         const db_maio_2026 = [
            {
-                {
                     id: "organizacao",
                     label: "Organização",
                     category: "Organização",
