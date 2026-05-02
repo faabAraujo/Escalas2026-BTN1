@@ -611,7 +611,7 @@
                         { date: "03/05 (Dom)", role: "Cânticos", name: "Luciana e Duda", songs: [] },
                         { date: "10/05 (Dom)", role: "Cânticos", name: "Sandra e Karina", songs: [] },
                         { date: "17/05 (Dom)", role: "Cânticos", name: "Edilma e Evelin", songs: [] },
-                        { date: "24/05 (Dom)", role: "Cânticos", name: "Tor e Mateus", songs: [] },
+                        { date: "24/05 (Dom)", role: "Cânticos", name: "Thor e Mateus", songs: [] },
                         { date: "31/05 (Dom)", role: "Cânticos", name: "Paulinha e Gil", songs: [] }
                     ]
                 },
@@ -685,7 +685,7 @@
                         { date: "02/05 (Sáb)", role: "Equipe", name: "Ângela e Evini" },
                         { date: "09/05 (Sáb)", role: "Equipe", name: "Mina e Wilson" },
                         { date: "16/05 (Sáb)", role: "Equipe", name: "Welma e Ângela" },
-                        { date: "23/05 (Sáb)", role: "Equipe", name: "Helen e Tor" },
+                        { date: "23/05 (Sáb)", role: "Equipe", name: "Helen e Thor" },
                         { date: "30/05 (Sáb)", role: "Equipe", name: "Evini e Luciana" },
                 
                         // Domingos
@@ -737,32 +737,12 @@
                     ]
                 },
                 {
-                id: "diaconos",
-                label: "Diáconos",
-                category: "Diáconos",
-                icon: "fa-user-tie",
-                items: [
-                    // Quartas
-                    { date: "06/05 (Qua)", role: "Plantão", name: "" },
-                    { date: "13/05 (Qua)", role: "Plantão", name: "" },
-                    { date: "20/05 (Qua)", role: "Plantão", name: "" },
-                    { date: "27/05 (Qua)", role: "Plantão", name: "" },
-        
-                    // Sábados
-                    { date: "02/05 (Sáb)", role: "Plantão", name: "" },
-                    { date: "09/05 (Sáb)", role: "Plantão", name: "" },
-                    { date: "16/05 (Sáb)", role: "Plantão", name: "" },
-                    { date: "23/05 (Sáb)", role: "Plantão", name: "" },
-                    { date: "30/05 (Sáb)", role: "Plantão", name: "" },
-        
-                    // Domingos
-                    { date: "03/05 (Dom)", role: "Plantão", name: "" },
-                    { date: "10/05 (Dom)", role: "Plantão", name: "" },
-                    { date: "17/05 (Dom)", role: "Plantão", name: "" },
-                    { date: "24/05 (Dom)", role: "Plantão", name: "" },
-                    { date: "31/05 (Dom)", role: "Plantão", name: "" }
-                ]
-            },
+                    id: "diaconos",
+                    label: "Diáconos",
+                    category: "Diáconos",
+                    icon: "fa-user-tie",
+                    items: [] // Adicione os itens de Diáconos aqui quando a escala for definida
+                },
         ];
 
         // --- 3. CONTROLE DE DADOS ---
@@ -774,7 +754,17 @@
             'maio_2026': { label: "Maio 2026", data: db_maio_2026 }
         };
 
-        let currentMonthKey = 'abril_2026';
+        function getInitialMonthKey() {
+            const now = new Date();
+            const monthNames = [
+                'janeiro', 'fevereiro', 'marco', 'abril', 'maio', 'junho',
+                'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro'
+            ];
+            const key = `${monthNames[now.getMonth()]}_${now.getFullYear()}`;
+            return databases[key] ? key : Object.keys(databases).at(-1);
+        }
+
+        let currentMonthKey = getInitialMonthKey();
         let dataBase = databases[currentMonthKey].data;
         let currentTab = 'geral';
        
@@ -792,8 +782,17 @@
         }
 
         function changeMonth(monthKey) {
+            if (!databases[monthKey]) return;
+
             currentMonthKey = monthKey;
             dataBase = databases[monthKey].data;
+
+            const tabExists = currentTab === 'geral' || dataBase.some(cat => cat.id === currentTab);
+            if (!tabExists) {
+                currentTab = 'geral';
+                pageTitle.textContent = 'Visão Geral';
+            }
+
             renderTabs();
             renderContent(searchInput.value);
         }
