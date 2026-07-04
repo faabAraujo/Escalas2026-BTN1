@@ -744,6 +744,185 @@
                     items: [] // Adicione os itens de Diáconos aqui quando a escala for definida
                 },
         ];
+        // Dados de JULHO 2026
+        const db_julho_2026 = [
+           {
+                    id: "organizacao",
+                    label: "Organização",
+                    category: "Organização",
+                    icon: "fa-bullhorn",
+                    items: [
+                    // Quartas
+                    { date: "01/07 (Qua)", role: "Direção", name: "Ministério da Saúde" },
+                    { date: "08/07 (Qua)", role: "Direção", name: "Adolescentes e Crianças" },
+                    { date: "15/07 (Qua)", role: "Direção", name: "Ministério da Mulher" },
+                    { date: "22/07 (Qua)", role: "Direção", name: "Ministério Lar e Família" },
+                    { date: "29/07 (Qua)", role: "Direção", name: "Direção" },
+
+                    // Sábados
+                    { date: "04/07 (Sáb)", role: "Direção", name: "Ministério Pessoal" },
+                    { date: "11/07 (Sáb)", role: "Direção", name: "Ministério de Mordomia" },
+                    { date: "18/07 (Sáb)", role: "Direção", name: "Escola Sabatina" },
+                    { date: "25/07 (Sáb)", role: "Direção", name: "Direção" },
+
+                    // Domingos
+                    { date: "05/07 (Dom)", role: "Direção", name: "Profecias" },
+                    { date: "12/07 (Dom)", role: "Direção", name: "Aventureiros" },
+                    { date: "19/07 (Dom)", role: "Direção", name: "Desbravadores" },
+                    { date: "26/07 (Dom)", role: "Direção", name: "Ministério Jovem" }
+                ]
+                },
+                {
+                    id: "musica",
+                    label: "Música / Louvor",
+                    category: "Música",
+                    icon: "fa-music",
+                    items: [
+                    // Quartas
+                    { date: "01/07 (Qua)", role: "Cânticos", name: "Mina e Alice", songs: [] },
+                    { date: "08/07 (Qua)", role: "Cânticos", name: "Thor e Mateus", songs: [] },
+                    { date: "15/07 (Qua)", role: "Cânticos", name: "Helen e Ângela", songs: [] },
+                    { date: "22/07 (Qua)", role: "Cânticos", name: "Welma e Edilma", songs: [] },
+                    { date: "29/07 (Qua)", role: "Cânticos", name: "Pedro e Luciana", songs: [] },
+
+                    // Sábados
+                    { date: "04/07 (Sáb)", role: "Cânticos", name: "Evini e Duda", songs: [] },
+                    { date: "11/07 (Sáb)", role: "Cânticos", name: "Camila e Artur", songs: [] },
+                    { date: "18/07 (Sáb)", role: "Cânticos", name: "Fabiano e Wilson", songs: [] },
+                    { date: "25/07 (Sáb)", role: "Cânticos", name: "Gil e Paulinha", songs: [] },
+
+                    // Domingos
+                    { date: "05/07 (Dom)", role: "Cânticos", name: "Sandra e Damião", songs: [] },
+                    { date: "12/07 (Dom)", role: "Cânticos", name: "Karina e Vinicius", songs: [] },
+                    { date: "19/07 (Dom)", role: "Cânticos", name: "Cleonice e Beatriz", songs: [] },
+                    { date: "26/07 (Dom)", role: "Cânticos", name: "Givaldo e Thor", songs: [] }
+                ]
+                },
+                {
+                    id: "sonoplastia",
+                    label: "Sonoplastia",
+                    category: "Sonoplastia",
+                    icon: "fa-sliders-h",
+                    items: [
+                    // Quartas
+                    { date: "01/07 (Qua)", role: "Mesa de Som", name: "Mateus Filipe" },
+                    { date: "08/07 (Qua)", role: "Mesa de Som", name: "Adriel Antônio" },
+                    { date: "15/07 (Qua)", role: "Mesa de Som", name: "Mateus Filipe" },
+                    { date: "22/07 (Qua)", role: "Mesa de Som", name: "Adriel Antônio" },
+                    { date: "29/07 (Qua)", role: "Mesa de Som", name: "Evelyn Thaina" },
+
+                    // Sábados
+                    { date: "04/07 (Sáb)", role: "Mesa de Som", name: "Fabiano Araújo" },
+                    { date: "11/07 (Sáb)", role: "Mesa de Som", name: "Karina Bezerra" },
+                    { date: "18/07 (Sáb)", role: "Mesa de Som", name: "Evelyn Thaina" },
+                    { date: "25/07 (Sáb)", role: "Mesa de Som", name: "Karina Bezerra" },
+
+                    // Domingos
+                    { date: "05/07 (Dom)", role: "Mesa de Som", name: "Ana Paula" },
+                    { date: "12/07 (Dom)", role: "Mesa de Som", name: "Evelyn Thaina" },
+                    { date: "19/07 (Dom)", role: "Mesa de Som", name: "Karina Bezerra" },
+                    { date: "26/07 (Dom)", role: "Mesa de Som", name: "Mateus Filipe" }
+                ]
+                },
+                {
+                    id: "diaconisas",
+                    label: "Diaconisas",
+                    category: "Diaconisas",
+                    icon: "fa-hand-holding-heart",
+                    items: [
+                    // Quartas
+                    { date: "01/07 (Qua)", role: "Equipe", name: "Helen" },
+                    { date: "08/07 (Qua)", role: "Equipe", name: "Gil" },
+                    { date: "15/07 (Qua)", role: "Equipe", name: "Ângela" },
+                    { date: "22/07 (Qua)", role: "Equipe", name: "Camila" },
+                    { date: "29/07 (Qua)", role: "Equipe", name: "Cleonice" },
+
+                    // Sábados
+                    { date: "04/07 (Sáb)", role: "Equipe", name: "Mina" },
+                    { date: "11/07 (Sáb)", role: "Equipe", name: "Helen" },
+                    { date: "18/07 (Sáb)", role: "Equipe", name: "Luciana" },
+                    { date: "25/07 (Sáb)", role: "Equipe", name: "Evini" },
+
+                    // Domingos
+                    { date: "05/07 (Dom)", role: "Equipe", name: "Welma" },
+                    { date: "12/07 (Dom)", role: "Equipe", name: "Ângela" },
+                    { date: "19/07 (Dom)", role: "Equipe", name: "Mina" },
+                    { date: "26/07 (Dom)", role: "Equipe", name: "Camila" }
+                ]
+                },
+                {
+                    id: "recepcao",
+                    label: "Recepção",
+                    category: "Recepção",
+                    icon: "fa-heart",
+                    items: [
+                    // Quartas
+                    { date: "01/07 (Qua)", role: "Equipe", name: "Ângela" },
+                    { date: "08/07 (Qua)", role: "Equipe", name: "Helen" },
+                    { date: "15/07 (Qua)", role: "Equipe", name: "Pedro" },
+                    { date: "22/07 (Qua)", role: "Equipe", name: "Mina" },
+                    { date: "29/07 (Qua)", role: "Equipe", name: "Evini" },
+
+                    // Sábados
+                    { date: "04/07 (Sáb)", role: "Equipe", name: "Mina e Welma" },
+                    { date: "11/07 (Sáb)", role: "Equipe", name: "Ângela e Wilson" },
+                    { date: "18/07 (Sáb)", role: "Equipe", name: "Evini e Tor" },
+                    { date: "25/07 (Sáb)", role: "Equipe", name: "Helen e Luciana" },
+
+                    // Domingos
+                    { date: "05/07 (Dom)", role: "Equipe", name: "Igreja" },
+                    { date: "12/07 (Dom)", role: "Equipe", name: "Gil" },
+                    { date: "19/07 (Dom)", role: "Equipe", name: "Igreja" },
+                    { date: "26/07 (Dom)", role: "Equipe", name: "Igreja" }
+                ]
+                },
+                {
+                    id: "adoracao_infantil",
+                    label: "Adoração Infantil",
+                    category: "Adoração Infantil",
+                    icon: "fa-child",
+                    items: [
+                    { date: "04/07 (Sáb)", role: "História", name: "Alice" },
+                    { date: "11/07 (Sáb)", role: "História", name: "Helen" },
+                    { date: "18/07 (Sáb)", role: "História", name: "Gilsandra" },
+                    { date: "25/07 (Sáb)", role: "História", name: "Camila" }
+                ]
+                },
+                {
+                    id: "limpeza",
+                    label: "Limpeza",
+                    category: "Limpeza",
+                    icon: "fa-broom",
+                    items: [
+                    // Quartas
+                    { date: "01/07 (Qua)", role: "Limpeza", name: "Edilma" },
+                    { date: "08/07 (Qua)", role: "Limpeza", name: "Ângela" },
+                    { date: "15/07 (Qua)", role: "Limpeza", name: "Cleonice" },
+                    { date: "22/07 (Qua)", role: "Limpeza", name: "Edilma" },
+                    { date: "29/07 (Qua)", role: "Limpeza", name: "Luciana" },
+
+                    // Sextas
+                    { date: "03/07 (Sex)", role: "Limpeza", name: "Camila" },
+                    { date: "10/07 (Sex)", role: "Limpeza", name: "Mina" },
+                    { date: "17/07 (Sex)", role: "Limpeza", name: "Sandra" },
+                    { date: "24/07 (Sex)", role: "Limpeza", name: "Helen" },
+                    { date: "31/07 (Sex)", role: "Limpeza", name: "Lúcia" },
+
+                    // Domingos
+                    { date: "05/07 (Dom)", role: "Limpeza", name: "Evini" },
+                    { date: "12/07 (Dom)", role: "Limpeza", name: "Gil" },
+                    { date: "19/07 (Dom)", role: "Limpeza", name: "Welma" },
+                    { date: "26/07 (Dom)", role: "Limpeza", name: "Duda" }
+                ]
+                },
+                {
+                    id: "diaconos",
+                    label: "Diáconos",
+                    category: "Diáconos",
+                    icon: "fa-user-tie",
+                    items: [] // Adicione os itens de Diáconos aqui quando a escala for definida
+                },
+        ];
 
         // --- 3. CONTROLE DE DADOS ---
         const databases = {
@@ -751,7 +930,8 @@
             'fevereiro_2026': { label: 'Fevereiro 2026', data: db_fevereiro_2026 },
             'marco_2026': { label: 'Março 2026', data: db_marco_2026 },
             'abril_2026': { label: 'Abril 2026', data: db_abril_2026 },
-            'maio_2026': { label: "Maio 2026", data: db_maio_2026 }
+            'maio_2026': { label: "Maio 2026", data: db_maio_2026 },
+            'julho_2026': { label: "Julho 2026", data: db_julho_2026 }
         };
 
         function getInitialMonthKey() {
